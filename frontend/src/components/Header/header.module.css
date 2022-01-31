@@ -1,0 +1,49 @@
+.header {
+  padding: 20px 80px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "DM Sans", sans-serif;
+}
+
+.header .logo svg {
+  width: 120px;
+  height: 29.24px;
+  cursor: pointer;
+}
+
+.header .links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+}
+
+.header .links a {
+  text-decoration: none;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+  color: #1e272e;
+}
+
+.header button {
+  background: #142683;
+  border-radius: 5px;
+  width: 133px;
+  height: 44px;
+  padding: 9px 20px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+}

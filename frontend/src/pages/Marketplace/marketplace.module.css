@@ -1,0 +1,154 @@
+.dashboard {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  background: #e5e5e5;
+  /* flex: 80%; */
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.topcard {
+  position: relative;
+  width: 1240px;
+  height: 186px;
+  left: 100px;
+  /* top:148px; */
+  background: #c3e7fd;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.topcardphoto {
+  /* position: absolute; */
+  width: 294px;
+  height: 186px;
+  z-index: 10000;
+}
+
+.semicircle {
+  /* position: absolute; */
+  width: 100px;
+  height: 186px;
+  background: #d3b4f6;
+  border-radius: 1000px 0px 0px 1000px;
+  transform: rotate(-180deg);
+}
+
+.toptext {
+  position: absolute;
+  width: 495px;
+  height: 98px;
+  left: 457px;
+  top: 20px;
+  font-family: Bebas Neue;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 30px;
+  line-height: 58px;
+  letter-spacing: -0.02em;
+  color: #1e272e;
+}
+.bottomtext {
+  position: absolute;
+  width: 319px;
+  height: 36px;
+  top: 60px;
+  left: 457px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  color: #566474;
+}
+.viewButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  position: absolute;
+  width: 133px;
+  height: 44px;
+  left: 84%;
+  top: 30%;
+  background: #1e272e;
+  border-radius: 5px;
+  color: white;
+}
+
+.viewButton:hover {
+  cursor: pointer;
+  width: 135px;
+  height: 46px;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px auto;
+  /* background: #e5e5e5; */
+}
+.card {
+  flex: 1 0 21%;
+  margin: 5px;
+  height: 1000px;
+}
+@media only screen and (max-width: 800px) {
+  .cards {
+    flex-wrap: wrap;
+  }
+  .topcard {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 8px;
+    flex-wrap: wrap;
+  }
+  .topcardphoto {
+    width: 110px;
+    height: 110px;
+    padding: 15px;
+    margin-top: 50px;
+  }
+  .semicircle {
+    width: 0px;
+    height: 0px;
+  }
+  .viewButton {
+    margin-top: 150px;
+    left: 40%;
+    top: -15%;
+  }
+  .toptext {
+    font-size: 20px;
+    text-align: center;
+    left: -20%;
+    top: -16%;
+  }
+  .bottomtext {
+    font-size: 20px;
+    text-align: center;
+    left: 0%;
+    top: 11%;
+  }
+}
+
+.allAPI {
+  margin-left: 45px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 31px;
+  letter-spacing: -0.02em;
+}
