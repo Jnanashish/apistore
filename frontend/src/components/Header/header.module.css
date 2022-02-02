@@ -1,4 +1,4 @@
-.header {
+/* .header {
   padding: 20px 80px;
   background-color: white;
   display: flex;
@@ -46,4 +46,52 @@
   color: #ffffff;
   cursor: pointer;
   border: none;
+} */
+
+.navbar {
+  padding: 20px 80px;
+  /* height: 10vh; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.navbar > img {
+  margin: 10px;
+}
+
+.btn {
+  padding: 8px 14px;
+  width: 133px;
+  height: 44px;
+  background: #142683;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+}
+.logo {
+  width: 120px;
+  cursor: pointer;
+}
+.navtext {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #566474;
+  margin: 15px;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+.right {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }

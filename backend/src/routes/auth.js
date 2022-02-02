@@ -1,13 +1,15 @@
+/* eslint-disable prettier/prettier */
  var express = require("express");
 
 const { check } = require("express-validator");
 var router = express.Router();
-const {signout, signup, signin, isSignedIn} = require("../controllers/auth")
+const { signup, signin, isSignedIn} = require("../controllers/auth")
 
-router.get("/signout", signout);
+// router.get("/signout", signout);
 
 router.post("/signup",[
     check("email","email is required").isEmail(),
+    check("name","Name is required").isEmail(),
     check("password", "password should be at least 3 char").isLength({min: 3})
 ], signup);
 

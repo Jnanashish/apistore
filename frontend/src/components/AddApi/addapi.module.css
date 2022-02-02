@@ -1,0 +1,71 @@
+.text {
+  font-family: DM Sans;
+  font-style: strong;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  /* identical to box height */
+
+  letter-spacing: -0.02em;
+  /* padding: 10px; */
+}
+.input,
+textarea {
+  margin: 10px 0px;
+  font-size: 16px;
+  width: 100%;
+  height: 44px;
+  box-sizing: border-box;
+  padding: 0px 20px;
+  border: 1px solid #ebf0f5;
+  border-radius: 5px;
+}
+textarea {
+  height: 84px;
+  padding: 10px 20px;
+}
+
+.formContainer {
+  border: 1px solid #dfe0e0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  margin: 40px auto;
+}
+form {
+  width: 80%;
+  height: 80%;
+  margin: 40px 0 40px 0;
+}
+.button {
+  margin: 10px 0px;
+  background: #142683;
+  border-radius: 5px;
+  width: 100%;
+  height: 44px;
+  color: white;
+  border: None;
+  cursor: pointer;
+}
+
+/* For file input */
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+.label {
+  margin: 10px 0px;
+  display: block;
+  width: 100%;
+  height: 44px;
+  border-radius: 5px;
+  color: #000;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 8px 20px;
+  border: 1px solid #ebf0f5;
+}

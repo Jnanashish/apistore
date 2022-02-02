@@ -1,8 +1,8 @@
+/* eslint-disable prettier/prettier */
 var mongoose = require("mongoose");
 const crypto = require("crypto");
-const uuidv1 = require("uuid/v1");
-
-
+// const uuidv1 = require("uuid");
+const {v1 : uuidv4} = require('uuid')
 // creating the schema
 var userSchema = new mongoose.Schema(
   {
@@ -10,23 +10,23 @@ var userSchema = new mongoose.Schema(
       type: String,
       required: true,
       maxlength: 60,
-      trim: true
+      trim: true,
     },
     email: {
       type: String,
       trim: true,
       required: true,
-      unique: true
+      unique: true,
     },
     // store the encrypted password
     encry_password: {
       type: String,
-      required: true
+      required: true,
     },
-    salt: String,     //for password
+    salt: String, //for password
     role: {
-      type: Number,   // higher number more privilage
-      default: 0
+      type: Number, // higher number more privilage
+      default: 0,
     },
   },
   { timestamps: true }
@@ -36,23 +36,23 @@ var userSchema = new mongoose.Schema(
 userSchema
   .virtual("password")
   // it will update this fields
-  .set(function(password) {
-    this._password = password;    // password is private variable
-    this.salt = uuidv1();
+  .set(function (password) {
+    this._password = password; // password is private variable
+    this.salt = uuidv4();
     this.encry_password = this.securePassword(password);
-  })  // return the value
-  .get(function() {
+  }) // return the value
+  .get(function () {
     return this._password;
   });
 
 // return a encrypted password
 userSchema.methods = {
-   // authenticate the user based on his password
-  autheticate: function(plainpassword) {
+  // authenticate the user based on his password
+  autheticate: function (plainpassword) {
     return this.securePassword(plainpassword) === this.encry_password;
   },
 
-  securePassword: function(plainpassword) {
+  securePassword: function (plainpassword) {
     // empty passwords cannot be stored
     if (!plainpassword) return "";
     try {
@@ -63,8 +63,7 @@ userSchema.methods = {
     } catch (err) {
       return "";
     }
-  }
+  },
 };
-
 
 module.exports = mongoose.model("User", userSchema);
