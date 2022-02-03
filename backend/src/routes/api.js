@@ -1,15 +1,21 @@
 /* eslint-disable prettier/prettier */
- var express = require("express");
+var express = require("express");
+var router = express.Router();  
 
-var router = express.Router();     
-const {addapi} = require("../controllers/api")
+// import methods from controller
+const {addapi, deleteapi, getapi, updateViewcount} = require("../controllers/api")
 
-
-
-
-
+// add new api to database
 router.post("/addapi", addapi);
 
+// Get api data from database
+router.get("/getapi", getapi);
+
+// delete api from database
+router.delete("/deleteapi/:id", deleteapi);
+
+// update view count
+router.patch("/viewcount", updateViewcount);
 
 
 module.exports = router; 

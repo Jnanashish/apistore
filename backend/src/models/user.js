@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 var mongoose = require("mongoose");
 const crypto = require("crypto");
-// const uuidv1 = require("uuid");
 const {v1 : uuidv4} = require('uuid')
+
 // creating the schema
 var userSchema = new mongoose.Schema(
   {

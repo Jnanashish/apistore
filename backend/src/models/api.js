@@ -9,14 +9,15 @@ const ApiSchema = new mongoose.Schema({
        type: String,     
     },
     desc : {
-      type: {},
+      type: String,
+    //   maxlength: 60,
+      trim: true,
     },
     photo : {
       type: String
     },
     viewcount : {
         type : Number,
-    
     },
     likecount : {
         type : Number, 

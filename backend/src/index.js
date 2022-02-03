@@ -9,14 +9,12 @@ const app = express();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-
+const fileUpload = require("express-fileupload");
 
 // import the Routes 
 const authRoutes = require("./routes/auth");
 const apiRoutes = require("./routes/api");
 
-
-console.log(process.env.DATABASE);
 
 // db connections
 mongoose.connect(process.env.DATABASE,{ 
@@ -34,12 +32,16 @@ mongoose.connect(process.env.DATABASE,{
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
+app.use(fileUpload({
+    useTempFiles:true
+}))
+// app.use(express.json());
 
 
-// routes
-// when visit api run authroute, need to prefix api before all 
+// routes, need to prefix api before all 
 app.use("/api", authRoutes);   
 app.use("/api", apiRoutes);   
+
 
 // port
 const port = process.env.port || 8000;

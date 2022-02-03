@@ -1,21 +1,10 @@
 /* eslint-disable prettier/prettier */
-// const { validationResult } = require("express-validator");
+
 const User = require("../models/user");
 var jwt = require("jsonwebtoken");
 var expressjwt = require("express-jwt"); 
 
 exports.signup = (req, res) =>{ 
-    console.log("Called");
-    console.log(req.body);
-    // res.json("From Signup")
-    // const errors = validationResult(req)
-    // if(!errors.isEmpty()){
-    //     return res.status(422).json({
-    //         // convert the errors to array
-    //         error : errors
-    //     })
-    // }
-
     const user = new User(req.body)
     user.save((err, user) => {
         if(err){
@@ -28,15 +17,8 @@ exports.signup = (req, res) =>{
 };
 
 
-exports.signin = (req, res) =>{
-    // const errors = validationResult(req)
-    
+exports.signin = (req, res) =>{   
     const {email, password} = req.body;
-    // if(!errors.isEmpty()){
-    //     return res.status(422).json({
-    //         error : errors.array()[0].msg
-    //     })
-    // }
 
     // exact the very first one data
     User.findOne({email}, (err, user) =>{
@@ -56,7 +38,7 @@ exports.signin = (req, res) =>{
         const token = jwt.sign({_id: user._id}, process.env.SECRET)
 
         // put token in cookie (Cookie is like a key value pair)
-        res.cookie("token", token, {expire : new Date() + 9999})
+        res.cookie("token", token, {expire : new Date() + 1})
 
         // send response to frontend
         const {_id, email} = user;
