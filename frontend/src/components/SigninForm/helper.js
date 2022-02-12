@@ -2,7 +2,7 @@ import {API} from "../../backend"
 
 // Sign in method
 export const signin = user =>{
-    return fetch(`${API}/signin`, {
+    return fetch(`${API}signin`, {
         method : "POST",
         headers : {
             Accept: "application/json",
@@ -36,4 +36,11 @@ export const isAuthenticated = () =>{
     else {
         return false;
     }
+}
+
+export const signout = () =>{
+    console.log("Called");
+    if(typeof window !== "undefined"){
+        localStorage.removeItem("jwt")
+    }    
 }

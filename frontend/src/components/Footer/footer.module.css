@@ -1,0 +1,22 @@
+.footer {
+  background-color: rgb(238, 244, 254);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 10px 0px;
+}
+.footer h2 {
+  font-size: 15px;
+  margin: 8px auto 10px auto;
+}
+
+@media (max-width: 400px) {
+  .footer {
+    padding-bottom: 10px;
+    padding-top: -5px;
+    flex-direction: column;
+  }
+  .footer h2 {
+    margin: 2px auto 0px auto;
+  }
+}

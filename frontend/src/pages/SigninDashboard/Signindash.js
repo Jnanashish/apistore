@@ -5,14 +5,13 @@ import styles from './signindash.module.css';
 import addicon from "../../Image/addlogo.svg"
 
 // impport components
-// import Form from "../../components/SignupForm/Form"
 import Signinform from '../../components/SigninForm/Signinform';
 
 const Signindash = () => {
     return (
         <div className={styles.dashboard}>
             <div className={styles.left} >
-                <img src={addicon} className={styles.welcomeLogo} />
+                <img src={addicon} className={styles.welcomeLogo} alt="Welcom logo"/>
                 <p className={styles.welcome}>
                     Welcome to your Dashboard
                 </p>

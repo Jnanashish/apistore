@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import styles from './signinform.module.css';
 // import axios from 'axios';
 
-// import { Navigate  } from "react-router-dom";
+import { Navigate  } from "react-router-dom";
 import { signin, authenticate, isAuthenticated } from "./helper";
 
 const Signinform = () => {
@@ -21,13 +21,13 @@ const Signinform = () => {
         const field = e.target.name;
         const val = e.target.value;
 
-        setUserData({... userData, [field]:val});
+        setUserData({...userData, [field]:val});
     }
 
     const performredirect = () => {
-        // if(user){
-        //     return <Navigate  to = "/"/>
-        // }
+        if(user){
+            return <Navigate  to = "/"/>
+        }
     }
 
     const onSubmit = (event) =>{
@@ -56,6 +56,9 @@ const Signinform = () => {
                     <input type="email" value={userData.email} onChange={handleChange} name="email" placeholder="Email address" className={styles.input} />
                     <input type="password" value={userData.password} onChange={handleChange} name="password" placeholder="Password" className={styles.input} />
                     <input onClick={onSubmit} type="submit" value="Signin" className={styles.button} />
+                    <a href="/signup" className={styles.signuptext}>
+                        Create a New account !
+                    </a>
             </form>
             {performredirect()}
         </div>

@@ -41,7 +41,6 @@
 
 .card button {
   padding: 8px 14px;
-  background: #3245a5;
 
   border-radius: 5px;
   border: none;
@@ -53,4 +52,11 @@
 
 .card button:hover {
   background: #142683;
+}
+.btn {
+  background: #3245a5;
+}
+.deletebtn {
+  background: red;
+  margin-left: 12px;
 }

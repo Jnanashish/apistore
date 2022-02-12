@@ -41,4 +41,15 @@ form {
   color: white;
   border: None;
   cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.signuptext {
+  font-size: 20px;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+
+.signuptext:hover {
+  text-decoration: none;
 }

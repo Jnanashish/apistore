@@ -3,6 +3,14 @@ import styles from './signupform.module.css';
 // import axios from 'axios';
 
 import { signup } from "./helper";
+// import { Link } from 'react-router-dom';
+
+import { useNavigate } from 'react-router-dom';
+
+// import react toast
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function Signupform(){
     const [userData, setUserData] = useState({
@@ -12,7 +20,7 @@ export default function Signupform(){
         error : ""
     });
     const {email, name, password} = userData
-
+    const navigate = useNavigate();
     const handleChange = (e) => {
         const field = e.target.name;
         const val = e.target.value;
@@ -20,24 +28,28 @@ export default function Signupform(){
         setUserData({... userData, [field]:val});
     }
 
-    const handleSubmit = () =>{
+    const handleSubmit = (event) =>{
         event.preventDefault();
         setUserData({ ...userData, error: false }); 
         signup({ name, email, password })
-        .then(data => {
-            if (data.error) {
-                setUserData({ ...userData, error: data.error});
-            } else {
-                setUserData({
-                    ...userData,
-                    name: "",
-                    email: "",
-                    password: "",
-                    error: "",
-                });
-            }
+        .then(() => {
+            setUserData({
+                ...userData,
+                name: "",
+                email: "",
+                password: "",
+                error: "",
+            });
+            
+            console.log("SUuc");
         })
-        .catch(console.log("Error in signup"));
+        .catch(
+            console.log("er"),
+
+            navigate("/signin")
+            // <Link to = "/signin"/>
+            // toast.error("Error Sign up")
+        );
     }
 
     return(
@@ -49,6 +61,7 @@ export default function Signupform(){
                     <input type="password" value={userData.password} onChange={handleChange} name="password" placeholder="Password" className={styles.input} />
                     <input onClick={handleSubmit} type="submit" value="Signup" className={styles.button} />
             </form>
+            <ToastContainer/>
         </div>
     )
 }

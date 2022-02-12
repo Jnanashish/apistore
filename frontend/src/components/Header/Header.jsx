@@ -7,26 +7,36 @@ import styles from "./header.module.css"
 import logo from "../../Image/logo.svg"
 import { Link } from 'react-router-dom';
 
-import {isAuthenticated} from "../SigninForm/helper"
+import {isAuthenticated, signout} from "../SigninForm/helper"
 
 const Header = () => {
+
+	const logout = () =>{
+		signout()
+		window.location.reload(false)
+	}
+
   	return(
         <div className={styles.navbar}>
             <div className={styles.left}>
 				<Link to = "/">
-					<img src={logo} className={styles.logo}/>
+					<img src={logo} className={styles.logo} alt="company logo"/>
 				</Link>
             </div> 
             <div className={styles.right}>
 			{isAuthenticated() && (
-				<Link to = "/#">
+				<Link to = "/myapi">
 					<p className={styles.navtext}>My APIs</p>
 				</Link>
 			)}
 			{isAuthenticated() && (
-            	<Link to = "/#">
-				<	p className={styles.navtext}>My Account</p>
+            	<Link to = "/myapi">
+					<p className={styles.navtext}>My Account</p>
 				</Link>				
+			)}
+			{isAuthenticated() && (
+				<p onClick={logout} className={styles.navtext}><b>Log out</b></p>
+							
 			)}
 			{isAuthenticated() && (
             	<Link to = "/newapi">
@@ -35,11 +45,11 @@ const Header = () => {
 			)}
 			{!isAuthenticated() && (
 				<>
+            	{/* <Link to = "/signin">
+					<p className={styles.navtext}>Signin / Signup</p>
+				</Link> */}
             	<Link to = "/signin">
-					<p className={styles.navtext}>Signin</p>
-				</Link>
-            	<Link to = "/signup">
-					<button className={styles.btn}>Signup</button>
+					<button className={styles.btn}>Signin / Signup</button>
 				</Link>	
 				</>			
 			)}
