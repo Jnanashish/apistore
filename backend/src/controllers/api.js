@@ -14,7 +14,6 @@ cloudinary.config({
 });
 
 
-
 exports.getapi = (req, res) => {
     Api.find()
     .exec((err, result) => {

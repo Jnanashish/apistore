@@ -53,3 +53,8 @@ form {
 .signuptext:hover {
   text-decoration: none;
 }
+
+.signinerr {
+  color: red;
+  margin: 0px;
+}

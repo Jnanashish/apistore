@@ -9,7 +9,7 @@ import Photo from "../../Image/backgroundremove.svg";
 import Header from '../../components/Header/Header';
 
 import { API } from '../../backend';
-
+import { Link } from 'react-router-dom';
 
 // import data from local system
 import { data } from '../../utils/Data/data';
@@ -45,8 +45,11 @@ const Marketplace = () => {
                     <h1 className={styles.toptext}>BACKGROUND IMAGE REMOVER</h1>
                     <h1 className={styles.bottomtext}>100% automatic and free</h1>
                     </div>
-
-                    <buttom className={styles.viewButton}>View App</buttom>
+                    <div className={styles.viewButton}>
+                        <Link to = "/bgremover">
+                            <button >View App</button>
+                        </Link>
+                    </div>
                 </div>
                 {/* Api for public */}
                 <h2 className={styles.text}>Important APIs</h2>
